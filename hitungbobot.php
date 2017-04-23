@@ -141,7 +141,7 @@ $resn = mysql_query("INSERT INTO `tbindex`(`Term`, `DocId`, `Count`) SELECT `tok
 			$rowNTerm = mysql_fetch_array($resNTerm);
 			$NTerm = $rowNTerm['N'];
 			
-			$w = $tf * log($n/$NTerm);
+			$w = $tf * log($id/$NTerm);
 			
 			//update bobot dari term tersebut
 			$resUpdateBobot = mysql_query("UPDATE tbindex SET Bobot = $w WHERE Id = $id");	
